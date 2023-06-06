@@ -34,6 +34,7 @@ class NewContact extends Mailable
     {
         return new Envelope(
             subject: 'New Contact',
+            replyTo: $this->lead->email
         );
     }
 
@@ -45,7 +46,7 @@ class NewContact extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact-mail',
         );
     }
 
